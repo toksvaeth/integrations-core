@@ -244,7 +244,7 @@ class Riak(AgentCheck):
         service_check_tags = tags + ['url:%s' % url]
 
         try:
-            h = http(timeout=timeout,
+            h = Http(timeout=timeout,
                      ca_certs=cacert,
                      disable_ssl_certificate_validation=disable_cert_verify)
             resp, content = h.request(url, "GET")
